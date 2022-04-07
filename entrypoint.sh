@@ -18,6 +18,7 @@ shift $(($OPTIND - 1))
 #version=$1
 echo "cd to github workspace ${GITHUB_WORKSPACE}"
 cd ${GITHUB_WORKSPACE}
+find .
 git for-each-ref refs/tags/
 git for-each-ref refs/tags/ --count=1 --sort=-version:refname --format='%(refname:short)'
 
